@@ -18,15 +18,6 @@ class SapifSettings
     private $options;
 
     /**
-     * Start up
-     */
-    public function __construct()
-    {
-        add_action('admin_menu', [$this, 'add_plugin_page']);
-        add_action('admin_init', [$this, 'page_init']);
-    }
-
-    /**
      * Add options page
      */
     public function add_plugin_page()

@@ -27,5 +27,8 @@ $myClass = new \Org_Heigl\Wordpress\Sapif();
 add_action('the_post', [$myClass, 'addContent'], 10, 2);
 
 if (is_admin()) {
-    $my_settings_page = new \Org_Heigl\Wordpress\SapifSettings();
+    $settings_page = new \Org_Heigl\Wordpress\SapifSettings();
+    add_action('admin_menu', [$settings_page, 'add_plugin_page']);
+    add_action('admin_init', [$settings_page, 'page_init']);
+
 }
